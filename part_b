@@ -1,0 +1,34 @@
+א. כתוב שאילתת SQL ליצירת טבלה עם כל המידע המופיע לעיל.
+בחר סוגי שדות מתאימים והשתמש היכן שצריך ב- UNIQUE ,CHECK ,DEFAULT וכו'.
+)ניתן לפצל ליותר מטבלה אחת אם רוצים(
+
+CREATE TABLE Computers (
+id INTEGER PRIMARY KEY AUTOINCREMENT ,
+serial_number INTEGER UNIQUE ,
+brand TEXT ,
+model TEXT ,
+screen_size INTEGER ,
+processor TEXT ,
+ram_size INTEGER ,
+storage_capacity INTEGER ,
+gpu INTEGER  ,
+price REAL NOT NULL CHECK (price >= 0) ,
+stock_quantity INTEGER ,
+release_year INTEGER ,
+system_operating TEXT ,
+battery_life INTEGER
+);
+
+ב. כתוב 3 שאילתות INSERT להוספת מחשבים ניידים.
+
+INSERT INTO Computers
+VALUES
+(1,1111,'Apple', 'acBook Pro 14-inch' , 14 , 'M2 Max' , 64 , 512 ,' Apple GPU', 1999 , 34 ,2023,'macOS Ventura',17);
+
+INSERT INTO Computers
+VALUES
+(2,2222,'dell', 'XPS 13 9310' , 13.4 , 'Intel Core i7-1165G7' , 16 , 512 ,' Intel Iris Xe Graphics', 1399 , 27 ,2022,'Windows 11',12);
+
+INSERT INTO Computers
+VALUES
+(3,3333,'Lenovo', 'Legion 5 Pro' , 16 , 'AMD Ryzen 7 5800H' , 16 , 1 ,' NVIDIA GeForce RTX 3060', 1799 , 31 , 2023 ,'AMD Ryzen 7 5800H',8);
